@@ -697,6 +697,10 @@ address {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.modal-comment {
+  margin-bottom: 16px;
+}
+
 .modal-text {
   font-weight: 400;
   font-size: 12px;
@@ -720,8 +724,8 @@ address {
 
 /*====== Check =========*/
 
-.field {
-  margin-bottom: 16px;
+.modal-end {
+  margin-bottom: 24px;
   /* width: 100%; */
 }
 
