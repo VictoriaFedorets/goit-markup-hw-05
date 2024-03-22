@@ -496,10 +496,11 @@
             </li>
           </ul>
         </div>
+        <!-- ============ -->
         <div class="footer-subscribe">
           <p class="text-icon">Subscribe</p>
           <form class="footer-form">
-            <label
+            <label class="footer-form-lab"
               ><input
                 type="email"
                 name="footer-email"
@@ -539,7 +540,7 @@
                 required
                 id="user-name"
               />
-              <svg class="modal-icon" width="18" height="18">
+              <svg class="modal-icon" width="18" height="24">
                 <use href="./images/icons.svg#icon-person"></use>
               </svg>
             </div>
@@ -555,7 +556,7 @@
                 placeholder=""
                 required
               />
-              <svg class="modal-icon" width="18" height="18">
+              <svg class="modal-icon" width="18" height="24">
                 <use href="./images/icons.svg#icon-phone"></use>
               </svg>
             </div>
@@ -571,7 +572,7 @@
                 placeholder=""
                 required
               />
-              <svg class="modal-icon" width="18" height="18">
+              <svg class="modal-icon" width="18" height="24">
                 <use href="./images/icons.svg#icon-email"></use>
               </svg>
             </div>
@@ -595,12 +596,12 @@
           <div class="modal-field field">
             <input
               type="checkbox"
-              name="privacy"
+              name="user-privacy"
               required
-              id="privacy"
+              id="user-privacy"
               class="modal-check visually-hidden"
             />
-            <label for="privacy" class="check-text">
+            <label for="user-privacy" class="check-text">
               <span class="check-text-holder">
                 <svg class="modal-check-icon" width="10" height="8">
                   <use href="./images/icons.svg#icon-check"></use>
@@ -610,11 +611,9 @@
               <a href="" class="check-link">Privacy Policy</a></label
             >
           </div>
-          <div class="button-sub">
-            <button type="submit" class="button-subscribe hero-button">
-              Send
-            </button>
-          </div>
+          <button type="submit" class="button-subscribe hero-button">
+            Send
+          </button>
         </form>
       </div>
     </div>

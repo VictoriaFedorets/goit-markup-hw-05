@@ -450,15 +450,6 @@ address {
   margin: 0;
 }
 
-.text-icon {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #ffffff;
-  margin-bottom: 16px;
-}
-
 .media-footer-list {
   display: flex;
   gap: 16px;
@@ -493,9 +484,21 @@ address {
   margin-left: 80px;
 }
 
+.text-icon {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
 .footer-form {
   display: flex;
   gap: 24px;
+}
+
+.footer-form-lab {
 }
 
 .footer-input {
@@ -508,12 +511,9 @@ address {
   padding-left: 16px;
   padding-top: 8px;
   padding-bottom: 8px;
-}
-
-.footer-input::placeholder {
-  font-weight: 400;
+  /* font-weight: 400; */
   font-size: 12px;
-  line-height: 200%;
+  line-height: 2;
   letter-spacing: 0.04em;
   color: #fff;
 }
@@ -521,16 +521,16 @@ address {
 .footer-form-btn {
   border-radius: 4px;
   padding: 8px 24px;
-  width: 165px;
+  min-width: 165px;
   height: 40px;
   background-color: #4d5ae5;
   border: none;
   font-weight: 500;
   font-size: 16px;
-  line-height: 150%;
+  line-height: 1.5;
   letter-spacing: 0.04em;
   display: flex;
-  text-align: center;
+  align-items: center;
   justify-content: center;
   color: #fff;
   gap: 16px;
@@ -545,15 +545,20 @@ address {
 
 .footer-form-icon {
   fill: #fff;
+  margin-left: 16px;
 }
 
 /* ================Modal============ */
 .backdrop {
   position: fixed;
   top: 0;
+  left: 0;
   background-color: rgba(46, 47, 66, 0.4);
   width: 100%;
   height: 100%;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -566,48 +571,61 @@ address {
 }
 
 .modal {
+  position: absolute;
   width: 408px;
   min-height: 584px;
   background-color: #fcfcfc;
   border-radius: 4px;
-  position: absolute;
   top: 50%;
   left: 50%;
+  box-shadow: зі значенням 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
   transform: translate(-50%, -50%);
-  padding: 72px 24px 32px 24px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 72px 24px 24px 24px;
 }
 
 .modal-close {
   position: absolute;
   right: 24px;
   top: 24px;
-  border-radius: 100%;
-  border: none;
-  background-color: #e7e9fc;
-  stroke-width: 1px;
-  stroke: rgba(0, 0, 0, 0.1);
   width: 24px;
   height: 24px;
+  background-color: #e7e9fc;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  /* border: none;
+  stroke-width: 1px;
+  stroke: rgba(0, 0, 0, 0.1); */
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-close:hover {
+.modal-close:hover,
+.modal-close:focus {
   background-color: #404bbf;
   fill: #ffffff;
-  border-radius: none;
+  border: none;
 }
 
 .modal-close-icon {
-  padding: 0;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-icon:hover,
+.modal-close-icon:focus {
+  fill: #ffffff;
 }
 
 .modal-tittle {
   font-weight: 500;
   font-size: 16px;
-  line-height: 150%;
+  line-height: 1, 5;
   letter-spacing: 0.02em;
   color: #2e2f42;
   text-align: center;
@@ -619,7 +637,21 @@ address {
 }
 
 .modal-field {
-  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.modal-label {
+  display: block;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  margin-bottom: 4px;
+}
+
+.modal-input-wrap {
+  position: relative;
 }
 
 .modal-input {
@@ -627,16 +659,11 @@ address {
   height: 40px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
+  background-color: transparent;
   outline: transparent;
-  padding-left: 50px;
+  padding-left: 38px;
   color: #ffffff;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
-  /* opacity: 0px; */
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* .modal-input:invalid {
@@ -660,35 +687,20 @@ address {
   color: #2e2f42;
 }
 
-.modal-label {
-  display: block;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 117%;
-  letter-spacing: 0.04em;
-  color: #8e8f99;
-  margin-bottom: 4px;
-}
-
 .modal-icon {
   position: absolute;
   /* fill: transparent; */
   stroke: ;
   left: 16px;
-  top: 8px;
   top: 50%;
   transform: translateY(-50%);
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal-input-wrap {
-  position: relative;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-text {
   font-weight: 400;
   font-size: 12px;
-  line-height: 117%;
+  line-height: 1.17;
   letter-spacing: 0.04em;
   width: 100%;
   height: 120px;
@@ -702,11 +714,15 @@ address {
   resize: none;
 }
 
+.modal-text:focus {
+  border-color: #4d5ae5;
+}
+
 /*====== Check =========*/
 
 .field {
   display: flex;
-  margin-top: 16px;
+  margin-bottom: 24px;
   /* width: 100%; */
 }
 
@@ -727,10 +743,13 @@ address {
   border: 1px solid rgba(46, 47, 66, 0.4);
   margin-right: 8px;
 
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   fill: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .check-link {
@@ -749,13 +768,8 @@ address {
 .modal-check-icon {
 }
 
-.button-sub {
-  margin-top: 24px;
-}
-
 .button-subscribe {
-  /* border-radius: 4px;
-  padding: 16px 32px;
+  display: block;
 
   min-width: 169px;
   height: 56px;
@@ -763,11 +777,14 @@ address {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 16px;
-  line-height: 150%;
+  line-height: 1.5;
   letter-spacing: 0.04em;
   background-color: #4d5ae5;
-  color: white;
+  color: #fff;
   cursor: pointer;
+  border: none;
 
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15); */
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
